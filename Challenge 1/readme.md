@@ -1,5 +1,6 @@
 ## Inactive Users Percentage
 
+#### Level : Easy
 #### Points : 10
 
 You’re given two tables: users and events. The events table holds values of all of the user events in the action column (‘like’, ‘comment’, or ‘post’).
