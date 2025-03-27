@@ -7,7 +7,7 @@ Given a table of job postings, write a query to retrieve:
 - The number of users that have posted each job only once.  
 - The number of users that have posted at least one job multiple times.  
 
-### Output Schema:  
+#### Output Schema:  
 
 | Column Name         | Data Type |
 |---------------------|----------|
