@@ -14,9 +14,8 @@ Write a query to get the post-success rate for each day in **January 2020**.
 
 **Note:** Post Success Rate is defined as:  
 
-\[
-\text{Post Success Rate} = \frac{\text{Number of posts submitted (post_submit)}}{\text{Number of posts entered (post_enter)}}
-\]
+**Post Success Rate** = (Number of posts submitted `post_submit`) / (Number of posts entered `post_enter`)  
+
 for each day.  
 
 ### Output Schema:  
