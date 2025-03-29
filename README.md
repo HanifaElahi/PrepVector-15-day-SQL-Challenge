@@ -9,4 +9,5 @@
 - [Challenge 3 : Single vs Repeat Job Posters](https://github.com/HanifaElahi/PrepVector-15-day-SQL-Challenge/tree/main/Challenge%203)
 - [Challenge 4 : Most Recent Transaction](https://github.com/HanifaElahi/PrepVector-15-day-SQL-Challenge/tree/main/Challenge%204)
 - [Challenge 5 : Post Completion Rate Analysis](https://github.com/HanifaElahi/PrepVector-15-day-SQL-Challenge/tree/main/Challenge%205)
+- [Challenge 6 : Above Average Product Prices]()
   
