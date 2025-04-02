@@ -12,5 +12,5 @@
 - [Challenge 6 : Above Average Product Prices](https://github.com/HanifaElahi/PrepVector-15-day-SQL-Challenge/tree/main/Challenge%206)
 - [Challenge 7 : Multi-Day Customer Count](https://github.com/HanifaElahi/PrepVector-15-day-SQL-Challenge/tree/main/Challenge%207)
 - [Challenge 8 : Sequential Project Pairs](https://github.com/HanifaElahi/PrepVector-15-day-SQL-Challenge/tree/main/Challenge%208)
-- [Challenge 9 : ]()
-- [Challenge 10 : ]()  
+- [Challenge 9 : Product Sales by Month](https://github.com/HanifaElahi/PrepVector-15-day-SQL-Challenge/tree/main/Challenge%209)
+- [Challenge 10 : Liker’s Liker]()  
