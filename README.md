@@ -10,4 +10,7 @@
 - [Challenge 4 : Most Recent Transaction](https://github.com/HanifaElahi/PrepVector-15-day-SQL-Challenge/tree/main/Challenge%204)
 - [Challenge 5 : Post Completion Rate Analysis](https://github.com/HanifaElahi/PrepVector-15-day-SQL-Challenge/tree/main/Challenge%205)
 - [Challenge 6 : Above Average Product Prices](https://github.com/HanifaElahi/PrepVector-15-day-SQL-Challenge/tree/main/Challenge%206)
-  
+- [Challenge 7 : Multi-Day Customer Count](https://github.com/HanifaElahi/PrepVector-15-day-SQL-Challenge/tree/main/Challenge%207)
+- [Challenge 8 : Sequential Project Pairs](https://github.com/HanifaElahi/PrepVector-15-day-SQL-Challenge/tree/main/Challenge%208)
+- [Challenge 9 : ]()
+- [Challenge 10 : ]()  
