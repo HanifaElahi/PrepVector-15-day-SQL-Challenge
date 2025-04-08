@@ -7,8 +7,6 @@ Given a table with event logs, find the top five users with the longest continuo
 
 Note: A continuous streak counts if the user visits the platform at least once per day on consecutive days.
 
-Output Schema:
-
 ### Output Schema:  
 
 |  Column Name  | Data Type |
