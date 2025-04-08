@@ -16,3 +16,6 @@
 - [Challenge 10 : Liker’s Liker](https://github.com/HanifaElahi/PrepVector-15-day-SQL-Challenge/tree/main/Challenge%2010)
 - [Challenge 11 : Third Unique Song Play Date](https://github.com/HanifaElahi/PrepVector-15-day-SQL-Challenge/tree/main/Challenge%2011)
 - [Challenge 12 : User Consecutive Day Streak Analysis](https://github.com/HanifaElahi/PrepVector-15-day-SQL-Challenge/tree/main/Challenge%2012)
+- [Challenge 13 : ]()
+- [Challenge 14 : ]()
+- [Challenge 15 : ]()
