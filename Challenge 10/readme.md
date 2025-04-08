@@ -7,8 +7,6 @@ A dating website’s schema is represented by a table of people that like other 
 
 Write a query to count the number of liker’s likers (the users that like the likers) if the liker has one.
 
-Output Schema:
-
 ### Output Schema:  
 
 | Column Name | Data Type |
