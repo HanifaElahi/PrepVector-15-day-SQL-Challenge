@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Hanifa Elahi · SQL Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;1,9..144,300;1,9..144,500&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github.min.css" id="hl-light"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css" id="hl-dark" disabled/>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/sql.min.js"></script>
+<style>
+:root {
+  --bg:#F7F6F2;--surface:#FFFFFF;--surface2:#EEECEA;--border:#E2E0DA;--border2:#CCCAC3;
+  --text:#181816;--text2:#636158;--text3:#A09D95;
+  --accent:#1D9E75;--accent-bg:#E1F5EE;--accent-text:#0A5C44;
+  --mono:'JetBrains Mono',monospace;--serif:'Fraunces',serif;
+  --r:14px;--r-sm:8px;
+}
+[data-theme="dark"]{
+  --bg:#0F0F0E;--surface:#1A1A18;--surface2:#222220;--border:#2A2A27;--border2:#383835;
+  --text:#EDECE7;--text2:#8A8780;--text3:#52504A;
+  --accent-bg:#0A2E22;--accent-text:#4DC99A;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{background:var(--bg);color:var(--text);font-family:var(--mono);font-size:13px;line-height:1.6;min-height:100vh;}
+
+nav{position:sticky;top:0;z-index:50;background:var(--bg);border-bottom:1px solid var(--border);padding:.75rem 0;}
+.nav-inner{max-width:1080px;margin:0 auto;padding:0 2rem;display:flex;align-items:center;justify-content:space-between;}
+.nav-name{font-size:12px;font-weight:700;letter-spacing:.08em;color:var(--text);}
+.nav-right{display:flex;align-items:center;gap:10px;}
+.nav-btn{background:none;border:1px solid var(--border2);border-radius:var(--r-sm);padding:4px 10px;cursor:pointer;font-size:11px;font-family:var(--mono);color:var(--text2);transition:all .15s;}
+.nav-btn:hover{color:var(--text);background:var(--surface2);}
+.gh-btn{display:flex;align-items:center;gap:5px;background:var(--text);color:var(--bg);border-radius:var(--r-sm);padding:5px 12px;font-size:11px;font-weight:700;text-decoration:none;letter-spacing:.04em;transition:opacity .15s;}
+.gh-btn:hover{opacity:.75;}
+
+.hero{max-width:1080px;margin:0 auto;padding:5rem 2rem 3.5rem;}
+.hero-grid{display:grid;grid-template-columns:1fr auto;gap:3rem;align-items:end;}
+.eyebrow{font-size:11px;font-weight:700;letter-spacing:.1em;color:var(--text3);margin-bottom:1rem;}
+h1{font-family:var(--serif);font-size:clamp(2.4rem,5vw,4rem);font-weight:500;line-height:1.05;color:var(--text);margin-bottom:1.25rem;}
+h1 em{font-style:italic;font-weight:300;color:var(--accent);}
+.hero-bio{font-size:13px;color:var(--text2);line-height:1.8;max-width:480px;margin-bottom:2rem;}
+.hero-links{display:flex;gap:10px;flex-wrap:wrap;}
+.hero-link{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:700;letter-spacing:.05em;padding:6px 14px;border-radius:var(--r-sm);text-decoration:none;transition:all .15s;}
+.hl-primary{background:var(--text);color:var(--bg);}
+.hl-primary:hover{opacity:.75;}
+.hl-secondary{background:var(--surface);border:1px solid var(--border2);color:var(--text2);}
+.hl-secondary:hover{color:var(--text);border-color:var(--text3);}
+
+.skill-cloud{display:flex;flex-direction:column;gap:10px;align-items:flex-end;}
+.skill-row{display:flex;gap:6px;}
+.sp{font-size:10px;font-weight:700;letter-spacing:.05em;padding:5px 11px;border-radius:100px;white-space:nowrap;}
+.sp-green {background:#E1F5EE;color:#0A5C44;}
+.sp-blue  {background:#E6F1FB;color:#185FA5;}
+.sp-purple{background:#EEEDFE;color:#534AB7;}
+.sp-amber {background:#FAEEDA;color:#854F0B;}
+.sp-coral {background:#FAECE7;color:#993C1D;}
+.sp-pink  {background:#FBEAF0;color:#993356;}
+[data-theme="dark"] .sp-green {background:#0A2E22;color:#4DC99A;}
+[data-theme="dark"] .sp-blue  {background:#042C53;color:#85B7EB;}
+[data-theme="dark"] .sp-purple{background:#26215C;color:#AFA9EC;}
+[data-theme="dark"] .sp-amber {background:#412402;color:#FAC775;}
+[data-theme="dark"] .sp-coral {background:#4A1B0C;color:#F0997B;}
+[data-theme="dark"] .sp-pink  {background:#4B1528;color:#ED93B1;}
+
+.wrap{max-width:1080px;margin:0 auto;padding:0 2rem;}
+.divider{border:none;border-top:1px solid var(--border);margin:0 0 2rem;}
+.sec-head{display:flex;align-items:baseline;justify-content:space-between;margin-bottom:1.5rem;}
+.sec-title{font-family:var(--serif);font-size:1.5rem;font-weight:500;color:var(--text);}
+.sec-sub{font-size:11px;color:var(--text3);letter-spacing:.06em;}
+
+.concept-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:10px;padding-bottom:3rem;}
+.concept-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:1rem 1.1rem;}
+.concept-label{font-size:10px;font-weight:700;letter-spacing:.08em;color:var(--text3);margin-bottom:.35rem;}
+.concept-name{font-size:13px;font-weight:700;color:var(--text);margin-bottom:.2rem;}
+.concept-detail{font-size:11px;color:var(--text3);line-height:1.55;margin-bottom:.5rem;}
+.concept-bar{height:3px;background:var(--border);border-radius:100px;overflow:hidden;}
+.concept-fill{height:100%;border-radius:100px;}
+.concept-badge{display:inline-flex;align-items:center;gap:5px;margin-bottom:.4rem;}
+.concept-count-num{font-size:18px;font-weight:700;color:var(--text);}
+.concept-count-label{font-size:10px;color:var(--text3);}
+
+.filter-bar{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:2rem;}
+.chip{font-size:11px;font-family:var(--mono);font-weight:700;padding:5px 12px;border-radius:100px;border:1px solid var(--border2);background:var(--surface);color:var(--text2);cursor:pointer;transition:all .15s;letter-spacing:.03em;}
+.chip:hover{border-color:var(--text3);color:var(--text);}
+.chip.active{background:var(--text);color:var(--bg);border-color:var(--text);}
+
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(310px,1fr));gap:12px;padding-bottom:5rem;}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:1.25rem;cursor:pointer;transition:border-color .15s,transform .12s,box-shadow .15s;display:flex;flex-direction:column;gap:.75rem;}
+.card:hover{border-color:var(--border2);transform:translateY(-2px);box-shadow:0 6px 24px rgba(0,0,0,.07);}
+.card-top{display:flex;align-items:center;justify-content:space-between;}
+.card-day{font-size:10px;font-weight:700;letter-spacing:.1em;color:var(--text3);}
+.card-tags{display:flex;gap:4px;flex-wrap:wrap;justify-content:flex-end;}
+.tag{font-size:10px;font-weight:700;padding:2px 7px;border-radius:4px;letter-spacing:.03em;}
+.tag-window{background:#E1F5EE;color:#0F6E56;}
+.tag-agg   {background:#E6F1FB;color:#185FA5;}
+.tag-join  {background:#FAEEDA;color:#854F0B;}
+.tag-cte   {background:#EEEDFE;color:#534AB7;}
+.tag-date  {background:#FAECE7;color:#993C1D;}
+.tag-subq  {background:#FBEAF0;color:#993356;}
+[data-theme="dark"] .tag-window{background:#0A2E22;color:#4DC99A;}
+[data-theme="dark"] .tag-agg   {background:#042C53;color:#85B7EB;}
+[data-theme="dark"] .tag-join  {background:#412402;color:#FAC775;}
+[data-theme="dark"] .tag-cte   {background:#26215C;color:#AFA9EC;}
+[data-theme="dark"] .tag-date  {background:#4A1B0C;color:#F0997B;}
+[data-theme="dark"] .tag-subq  {background:#4B1528;color:#ED93B1;}
+.card-title{font-size:14px;font-weight:700;color:var(--text);line-height:1.3;}
+.card-desc{font-size:12px;color:var(--text2);line-height:1.65;flex:1;}
+.card-footer{display:flex;align-items:center;justify-content:space-between;padding-top:.75rem;border-top:1px solid var(--border);}
+.diff{font-size:10px;font-weight:700;padding:3px 8px;border-radius:4px;letter-spacing:.04em;}
+.diff-easy  {background:#EAF3DE;color:#3B6D11;}
+.diff-medium{background:#FAEEDA;color:#854F0B;}
+.diff-hard  {background:#FCEBEB;color:#A32D2D;}
+[data-theme="dark"] .diff-easy  {background:#173404;color:#97C459;}
+[data-theme="dark"] .diff-medium{background:#412402;color:#FAC775;}
+[data-theme="dark"] .diff-hard  {background:#501313;color:#F09595;}
+.card-cta{font-size:11px;font-weight:700;color:var(--text3);display:flex;align-items:center;gap:4px;transition:color .15s;}
+.card:hover .card-cta{color:var(--text);}
+
+.empty{text-align:center;padding:4rem 1rem;color:var(--text3);font-size:13px;display:none;}
+
+/* MODAL */
+.overlay{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:200;display:none;align-items:center;justify-content:center;padding:1.5rem;}
+.overlay.open{display:flex;}
+.modal{background:var(--surface);border:1px solid var(--border2);border-radius:var(--r);width:100%;max-width:780px;max-height:90vh;display:flex;flex-direction:column;overflow:hidden;}
+.modal-header{padding:1.1rem 1.4rem;border-bottom:1px solid var(--border);display:flex;align-items:flex-start;justify-content:space-between;gap:1rem;}
+.modal-eyebrow{font-size:10px;font-weight:700;letter-spacing:.1em;color:var(--text3);margin-bottom:.3rem;}
+.modal-title{font-family:var(--serif);font-size:1.2rem;font-weight:500;color:var(--text);line-height:1.2;}
+.modal-header-right{display:flex;align-items:center;gap:8px;flex-shrink:0;}
+.modal-close{background:none;border:1px solid var(--border2);border-radius:var(--r-sm);padding:5px 10px;cursor:pointer;font-size:11px;font-family:var(--mono);color:var(--text2);transition:all .15s;}
+.modal-close:hover{background:var(--surface2);color:var(--text);}
+.modal-body{padding:1.4rem;overflow-y:auto;flex:1;display:flex;flex-direction:column;gap:1.25rem;}
+.modal-slabel{font-size:10px;font-weight:700;letter-spacing:.1em;color:var(--text3);margin-bottom:.5rem;}
+.modal-desc{font-size:13px;color:var(--text2);line-height:1.75;}
+.modal-tags{display:flex;gap:6px;flex-wrap:wrap;}
+.code-wrap{border:1px solid var(--border);border-radius:var(--r-sm);overflow:hidden;}
+.code-bar{display:flex;align-items:center;justify-content:space-between;background:var(--surface2);padding:.5rem .85rem;border-bottom:1px solid var(--border);}
+.code-lang{font-size:10px;font-weight:700;letter-spacing:.08em;color:var(--text3);}
+.copy-btn{font-size:11px;font-family:var(--mono);background:none;border:1px solid var(--border2);border-radius:4px;padding:2px 9px;cursor:pointer;color:var(--text2);transition:all .15s;}
+.copy-btn:hover{color:var(--text);background:var(--border);}
+pre{margin:0!important;border-radius:0!important;}
+pre code{font-family:var(--mono)!important;font-size:12.5px!important;line-height:1.7!important;}
+.hljs{background:var(--surface)!important;padding:1.1rem!important;}
+.loading-sql{padding:1.2rem;color:var(--text3);font-size:12px;display:flex;align-items:center;gap:8px;}
+.spinner{width:14px;height:14px;border:2px solid var(--border2);border-top-color:var(--accent);border-radius:50%;animation:spin .7s linear infinite;flex-shrink:0;}
+@keyframes spin{to{transform:rotate(360deg)}}
+.sql-error{padding:1rem;color:#A32D2D;font-size:12px;background:#FCEBEB;border-radius:var(--r-sm);line-height:1.7;}
+[data-theme="dark"] .sql-error{background:#501313;color:#F09595;}
+.modal-footer{padding:.9rem 1.4rem;border-top:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;}
+.modal-gh{display:flex;align-items:center;gap:5px;font-size:11px;font-weight:700;color:var(--text2);text-decoration:none;transition:color .15s;letter-spacing:.04em;}
+.modal-gh:hover{color:var(--text);}
+
+@media(max-width:700px){
+  .hero-grid{grid-template-columns:1fr;}
+  .skill-cloud{align-items:flex-start;}
+  h1{font-size:2.2rem;}
+  .concept-grid{grid-template-columns:1fr 1fr;}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <span class="nav-name">HANIFA ELAHI</span>
+    <div class="nav-right">
+      <button class="nav-btn" id="theme-toggle">◐ dark</button>
+      <a class="gh-btn" href="https://github.com/HanifaElahi/PrepVector-15-day-SQL-Challenge" target="_blank">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="hero-grid">
+    <div>
+      <div class="eyebrow">SQL · DATA ANALYST · PREPVECTOR</div>
+      <h1>15 days.<br><em>SQL mastered.</em></h1>
+      <p class="hero-bio">A complete run through PrepVector's 15-Day SQL Challenge — covering window functions, CTEs, date logic, aggregations, and complex joins. Every problem solved, documented, and open-sourced.</p>
+      <div class="hero-links">
+        <a class="hero-link hl-primary" href="https://github.com/HanifaElahi" target="_blank">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+          @HanifaElahi
+        </a>
+        <a class="hero-link hl-secondary" href="https://challenges.prepvector.com/challenges/fe090a86-abf5-4e46-92b4-6fc5ce069bc3" target="_blank">View original challenge ↗</a>
+      </div>
+    </div>
+    <div class="skill-cloud">
+      <div class="skill-row">
+        <span class="sp sp-green">Window Functions</span>
+        <span class="sp sp-blue">Aggregations</span>
+      </div>
+      <div class="skill-row">
+        <span class="sp sp-purple">CTEs</span>
+        <span class="sp sp-amber">Joins</span>
+        <span class="sp sp-coral">Date Logic</span>
+      </div>
+      <div class="skill-row">
+        <span class="sp sp-pink">Subqueries</span>
+        <span class="sp sp-green">Analytical SQL</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="wrap" style="padding-bottom:1rem;">
+  <hr class="divider"/>
+  <div class="sec-head" style="margin-bottom:1.25rem;"><span class="sec-title">Concepts covered</span></div>
+  <div class="concept-grid" id="concept-grid"></div>
+</div>
+
+<div class="wrap">
+  <hr class="divider"/>
+  <div class="sec-head">
+    <span class="sec-title">Solutions</span>
+    <span class="sec-sub" id="result-count">15 challenges</span>
+  </div>
+  <div class="filter-bar">
+    <button class="chip active" data-filter="all">All</button>
+    <button class="chip" data-filter="window">Window fn</button>
+    <button class="chip" data-filter="agg">Aggregation</button>
+    <button class="chip" data-filter="join">Joins</button>
+    <button class="chip" data-filter="cte">CTE</button>
+    <button class="chip" data-filter="date">Date logic</button>
+    <button class="chip" data-filter="subq">Subquery</button>
+  </div>
+  <div class="grid" id="grid"></div>
+  <div class="empty" id="empty">No challenges match this filter.</div>
+</div>
+
+<div class="overlay" id="overlay">
+  <div class="modal">
+    <div class="modal-header">
+      <div>
+        <div class="modal-eyebrow" id="modal-eyebrow"></div>
+        <div class="modal-title" id="modal-title"></div>
+      </div>
+      <div class="modal-header-right">
+        <span class="diff" id="modal-diff"></span>
+        <button class="modal-close" id="modal-close">✕</button>
+      </div>
+    </div>
+    <div class="modal-body">
+      <div>
+        <div class="modal-slabel">PROBLEM</div>
+        <div class="modal-desc" id="modal-desc"></div>
+      </div>
+      <div>
+        <div class="modal-slabel">CONCEPTS APPLIED</div>
+        <div class="modal-tags" id="modal-tags"></div>
+      </div>
+      <div>
+        <div class="modal-slabel">SOLUTION</div>
+        <div class="code-wrap">
+          <div class="code-bar">
+            <span class="code-lang">SQL</span>
+            <button class="copy-btn" id="copy-btn">copy</button>
+          </div>
+          <div id="code-area"></div>
+        </div>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <a class="modal-gh" id="modal-gh" href="#" target="_blank">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+        VIEW ON GITHUB
+      </a>
+      <span style="font-size:11px;color:var(--text3);" id="modal-nav"></span>
+    </div>
+  </div>
+</div>
+
+<script>
+const REPO_RAW='https://raw.githubusercontent.com/HanifaElahi/PrepVector-15-day-SQL-Challenge/main';
+const REPO_WEB='https://github.com/HanifaElahi/PrepVector-15-day-SQL-Challenge/tree/main';
+const SQL_FILE='solution.sql'; // ← update if your files have a different name
+
+const challenges=[
+  {day:1, title:'Inactive users percentage',        desc:'Calculate the percentage of users who have never placed an order. Tests combining COUNT with conditional filtering logic.',                      tags:['agg'],                diff:'easy'},
+  {day:2, title:'Home address transaction analysis', desc:'Analyze transactions from a user\'s home address vs other locations, comparing spend patterns across address types.',                          tags:['join','agg'],         diff:'medium'},
+  {day:3, title:'Single vs repeat job posters',      desc:'Classify employers as one-time or repeat posters based on job listing history — a clean GROUP BY with conditional bucketing.',                 tags:['agg','subq'],         diff:'easy'},
+  {day:4, title:'Most recent transaction',           desc:'Retrieve only the latest transaction per user using ROW_NUMBER() or RANK() — a fundamental window function pattern.',                         tags:['window'],             diff:'easy'},
+  {day:5, title:'Post completion rate analysis',     desc:'Compute what fraction of posts were fully completed across categories. Combines filtered aggregation with percentage calculation.',            tags:['agg','subq'],         diff:'medium'},
+  {day:6, title:'Above average product prices',      desc:'Find every product priced above its category average using a correlated subquery or CTE-based comparison.',                                   tags:['subq','agg'],         diff:'easy'},
+  {day:7, title:'Multi-day customer count',          desc:'Count distinct customers who purchased on more than one calendar day, requiring grouping by customer and counting distinct dates.',             tags:['agg','date'],         diff:'medium'},
+  {day:8, title:'Sequential project pairs',          desc:'Identify back-to-back project pairs per employee using LEAD() to peek at the next row — a classic window function challenge.',                tags:['window','cte'],       diff:'hard'},
+  {day:9, title:'Product sales by month',            desc:'Aggregate revenue by product across calendar months using DATE_TRUNC or EXTRACT alongside GROUP BY.',                                         tags:['agg','date'],         diff:'medium'},
+  {day:10,title:"Liker's liker",                     desc:'Find users who liked someone\'s post where that person also liked theirs — a self-join on an interactions table to detect mutual likes.',     tags:['join','subq'],        diff:'hard'},
+  {day:11,title:'Third unique song play date',       desc:'Find the exact date a user first played a song for the third unique time, using DENSE_RANK() or cumulative distinct count logic.',            tags:['window','date'],      diff:'medium'},
+  {day:12,title:'User consecutive day streak',       desc:'Compute the longest run of consecutive active days per user using the classic date-minus-row-number gap detection pattern.',                  tags:['window','cte','date'],diff:'hard'},
+  {day:13,title:'Click-through rate by age',         desc:'Bucket users into age groups and compute ad CTR per segment, blending CASE WHEN age binning with ratio aggregation.',                        tags:['agg','subq'],         diff:'medium'},
+  {day:14,title:'Monthly revenue growth analysis',   desc:'Calculate month-over-month revenue change using LAG() — one of the most common analytical queries in business reporting.',                   tags:['window','cte','date'],diff:'hard'},
+  {day:15,title:'Duplicate transaction',             desc:'Surface financial transactions that are duplicates within a short time window using window functions to compare adjacent rows.',               tags:['window','cte'],       diff:'medium'},
+];
+
+const tagMeta={
+  window:{cls:'tag-window',label:'Window functions',color:'#1D9E75'},
+  agg:   {cls:'tag-agg',   label:'Aggregation',     color:'#378ADD'},
+  join:  {cls:'tag-join',  label:'Joins',            color:'#BA7517'},
+  cte:   {cls:'tag-cte',   label:'CTE',              color:'#7F77DD'},
+  date:  {cls:'tag-date',  label:'Date logic',       color:'#D85A30'},
+  subq:  {cls:'tag-subq',  label:'Subqueries',       color:'#D4537E'},
+};
+const diffMeta={
+  easy:  {cls:'diff-easy',  label:'easy'},
+  medium:{cls:'diff-medium',label:'medium'},
+  hard:  {cls:'diff-hard',  label:'hard'},
+};
+
+let activeFilter='all', sqlCache={};
+
+function buildConceptGrid(){
+  const counts={};
+  challenges.forEach(c=>c.tags.forEach(t=>{counts[t]=(counts[t]||0)+1;}));
+  const max=Math.max(...Object.values(counts));
+  const descs={
+    window:'ROW_NUMBER · RANK · LAG · LEAD · DENSE_RANK',
+    agg:   'COUNT · SUM · AVG · GROUP BY · HAVING',
+    join:  'INNER · LEFT · SELF JOIN patterns',
+    cte:   'WITH clauses · multi-step CTEs',
+    date:  'DATE_TRUNC · EXTRACT · date arithmetic',
+    subq:  'Correlated & scalar subqueries',
+  };
+  const grid=document.getElementById('concept-grid');
+  Object.entries(counts).sort((a,b)=>b[1]-a[1]).forEach(([tag,count])=>{
+    const m=tagMeta[tag];
+    const pct=(count/max*100).toFixed(0);
+    const d=document.createElement('div');
+    d.className='concept-card';
+    d.innerHTML=`
+      <div class="concept-label">CONCEPT</div>
+      <div style="display:flex;align-items:baseline;gap:8px;margin-bottom:.25rem;">
+        <span class="concept-count-num">${count}</span>
+        <span class="concept-count-label">/ 15 challenges</span>
+      </div>
+      <div class="concept-name">${m.label}</div>
+      <div class="concept-detail">${descs[tag]}</div>
+      <div class="concept-bar"><div class="concept-fill" style="width:${pct}%;background:${m.color};"></div></div>`;
+    grid.appendChild(d);
+  });
+}
+
+function render(){
+  const grid=document.getElementById('grid');
+  const empty=document.getElementById('empty');
+  const filtered=activeFilter==='all'?challenges:challenges.filter(c=>
+    ['easy','medium','hard'].includes(activeFilter)?c.diff===activeFilter:c.tags.includes(activeFilter)
+  );
+  document.getElementById('result-count').textContent=filtered.length+' challenge'+(filtered.length!==1?'s':'');
+  grid.innerHTML='';
+  if(!filtered.length){empty.style.display='block';return;}
+  empty.style.display='none';
+  filtered.forEach(c=>{
+    const card=document.createElement('div');
+    card.className='card';
+    card.innerHTML=`
+      <div class="card-top">
+        <span class="card-day">DAY ${String(c.day).padStart(2,'0')}</span>
+        <div class="card-tags">${c.tags.map(t=>`<span class="tag ${tagMeta[t].cls}">${tagMeta[t].label}</span>`).join('')}</div>
+      </div>
+      <div class="card-title">${c.title}</div>
+      <div class="card-desc">${c.desc}</div>
+      <div class="card-footer">
+        <span class="diff ${diffMeta[c.diff].cls}">${diffMeta[c.diff].label}</span>
+        <span class="card-cta">view solution →</span>
+      </div>`;
+    card.addEventListener('click',()=>openModal(c));
+    grid.appendChild(card);
+  });
+}
+
+async function openModal(c){
+  document.getElementById('modal-eyebrow').textContent='DAY '+String(c.day).padStart(2,'0')+' OF 15';
+  document.getElementById('modal-title').textContent=c.title;
+  document.getElementById('modal-desc').textContent=c.desc;
+  const dm=diffMeta[c.diff];
+  const dd=document.getElementById('modal-diff');
+  dd.textContent=dm.label; dd.className='diff '+dm.cls;
+  document.getElementById('modal-tags').innerHTML=c.tags.map(t=>`<span class="tag ${tagMeta[t].cls}">${tagMeta[t].label}</span>`).join('');
+  document.getElementById('modal-gh').href=REPO_WEB+'/Challenge%20'+c.day;
+  document.getElementById('modal-nav').textContent=c.day+' / 15';
+  document.getElementById('overlay').classList.add('open');
+  document.body.style.overflow='hidden';
+  await loadSQL(c.day);
+}
+
+function closeModal(){
+  document.getElementById('overlay').classList.remove('open');
+  document.body.style.overflow='';
+}
+document.getElementById('modal-close').addEventListener('click',closeModal);
+document.getElementById('overlay').addEventListener('click',e=>{if(e.target.id==='overlay')closeModal();});
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal();});
+
+async function loadSQL(day){
+  const area=document.getElementById('code-area');
+  if(sqlCache[day]){renderCode(sqlCache[day],area);return;}
+  area.innerHTML=`<div class="loading-sql"><div class="spinner"></div>Loading solution…</div>`;
+  try{
+    const res=await fetch(`${REPO_RAW}/Challenge%20${day}/${SQL_FILE}`);
+    if(!res.ok)throw new Error('HTTP '+res.status);
+    const sql=await res.text();
+    sqlCache[day]=sql;
+    renderCode(sql,area);
+  }catch(e){
+    area.innerHTML=`<div class="sql-error">
+      Could not fetch <strong>${SQL_FILE}</strong> from Challenge ${day}.<br><br>
+      If your file has a different name, update <code>SQL_FILE</code> near the top of the script.<br>
+      Expected URL: <code style="font-size:11px;word-break:break-all;">${REPO_RAW}/Challenge%20${day}/${SQL_FILE}</code>
+    </div>`;
+  }
+}
+
+function renderCode(sql,area){
+  const pre=document.createElement('pre');
+  const code=document.createElement('code');
+  code.className='language-sql';
+  code.textContent=sql;
+  pre.appendChild(code);
+  area.innerHTML='';
+  area.appendChild(pre);
+  hljs.highlightElement(code);
+}
+
+document.getElementById('copy-btn').addEventListener('click',()=>{
+  const code=document.querySelector('#code-area code');
+  if(!code)return;
+  navigator.clipboard.writeText(code.textContent).then(()=>{
+    const btn=document.getElementById('copy-btn');
+    btn.textContent='copied!';
+    setTimeout(()=>btn.textContent='copy',1500);
+  });
+});
+
+document.querySelectorAll('.chip').forEach(chip=>{
+  chip.addEventListener('click',()=>{
+    document.querySelectorAll('.chip').forEach(c=>c.classList.remove('active'));
+    chip.classList.add('active');
+    activeFilter=chip.dataset.filter;
+    render();
+  });
+});
+
+const prefersDark=window.matchMedia('(prefers-color-scheme: dark)').matches;
+let dark=localStorage.getItem('pv_theme')?localStorage.getItem('pv_theme')==='dark':prefersDark;
+function applyTheme(){
+  document.documentElement.setAttribute('data-theme',dark?'dark':'light');
+  document.getElementById('hl-light').disabled=dark;
+  document.getElementById('hl-dark').disabled=!dark;
+  document.getElementById('theme-toggle').textContent=dark?'◑ light':'◐ dark';
+  localStorage.setItem('pv_theme',dark?'dark':'light');
+}
+document.getElementById('theme-toggle').addEventListener('click',()=>{dark=!dark;applyTheme();});
+
+applyTheme();
+buildConceptGrid();
+render();
+</script>
+</body>
+</html>
