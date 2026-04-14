@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1"/>
-<title>Hanifa Elahi · SQL Portfolio</title>
+<title>Hanifa Elahi · PrepVector SQL Challenge</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;1,9..144,300;1,9..144,500&display=swap" rel="stylesheet"/>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github.min.css" id="hl-light"/>
@@ -178,9 +178,15 @@ pre code{font-family:var(--mono)!important;font-size:12.5px!important;line-heigh
 <section class="hero">
   <div class="hero-grid">
     <div>
-      <div class="eyebrow">SQL · DATA ANALYST · PREPVECTOR</div>
-      <h1>15 days.<br><em>SQL mastered.</em></h1>
-      <p class="hero-bio">A complete run through PrepVector's 15-Day SQL Challenge — covering window functions, CTEs, date logic, aggregations, and complex joins. Every problem solved, documented, and open-sourced.</p>
+      <div class="eyebrow">SENIOR DATA ANALYST · SQL · PREPVECTOR CHALLENGE</div>
+      <h1>PrepVector 15-Day<br><em>SQL Challenge.</em></h1>
+      <div class="hero-stats">
+        <span>15 Challenges</span>
+        <span>6 Concepts</span>
+        <span>100% Completed</span>
+      </div>
+      <p class="hero-bio">A complete walkthrough of PrepVector’s 15-Day SQL Challenge — showcasing advanced SQL problem-solving across window functions, CTEs, joins, subqueries, aggregations, and date logic.
+    Every challenge solved, documented, and available on GitHub.</p>
       <div class="hero-links">
         <a class="hero-link hl-primary" href="https://github.com/HanifaElahi" target="_blank">
           <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
@@ -216,7 +222,7 @@ pre code{font-family:var(--mono)!important;font-size:12.5px!important;line-heigh
 <div class="wrap">
   <hr class="divider"/>
   <div class="sec-head">
-    <span class="sec-title">Solutions</span>
+    <span class="sec-title">Challenge Solutions</span>
     <span class="sec-sub" id="result-count">15 challenges</span>
   </div>
   <div class="filter-bar">
@@ -366,7 +372,7 @@ function render(){
       <div class="card-desc">${c.desc}</div>
       <div class="card-footer">
         <span class="diff ${diffMeta[c.diff].cls}">${diffMeta[c.diff].label}</span>
-        <span class="card-cta">view solution →</span>
+        <span class="card-cta">view challenge →</span>
       </div>`;
     card.addEventListener('click',()=>openModal(c));
     grid.appendChild(card);
